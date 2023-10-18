@@ -1,0 +1,13 @@
+openai:
+  api_key: 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
+  engine: gpt-3.5-turbo-instruct
+
+database:
+  host: localhost
+  port: 5432
+  user: myuser
+  password: mypassword
+  database: mydatabase
+
+environment:
+  env: local # Possible [ local, prod ]
