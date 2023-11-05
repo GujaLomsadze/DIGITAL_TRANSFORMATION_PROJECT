@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 
-from models.all_models import User, UserBase, UserCreate, UserResponse, UserUpdate
+from models.all_models import User, UserBase, UserCreate, UserResponse, UserUpdate, UserBaseWithID
 from utils.db import get_db
 
 router = APIRouter()
@@ -28,7 +28,7 @@ def get_user(user_id: int, db: Session = Depends(get_db)):
     return user
 
 
-@router.get("/users", response_model=List[UserBase])
+@router.get("/users", response_model=List[UserBaseWithID])
 def get_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = db.query(User).offset(skip).limit(limit).all()
     return users

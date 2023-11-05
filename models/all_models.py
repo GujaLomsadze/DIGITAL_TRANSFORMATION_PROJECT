@@ -44,6 +44,21 @@ class UserBase(BaseModel):
     learning_style_id: int
 
 
+class UserBaseWithID(BaseModel):
+    id: int
+    name: str
+    middle_name: str
+    lastname: str
+    age: int
+    gender: GenderEnum
+    course_program_study: str
+    email_address: str
+    employment_status: EmploymentStatusEnum
+    civil_status: CivilStatusEnum
+    has_kids: bool
+    learning_style_id: int
+
+
 class UserCreate(UserBase):
     # All fields are required when creating a user
     pass
