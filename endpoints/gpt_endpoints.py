@@ -63,7 +63,7 @@ async def ask_gpt(
     answer = response.choices[0].text.strip()
 
     # Save the conversation to the database
-    conversation = Conversation(user_id=user_id, user_question=message, gpt_answer=answer)
+    conversation = Conversation(user_id=user_id, user_question=full_message, gpt_answer=answer)
     db.add(conversation)
     db.commit()
 

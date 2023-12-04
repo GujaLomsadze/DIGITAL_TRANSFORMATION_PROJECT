@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-#  web:
-#    build: .
-#    command: uvicorn main:app --host 0.0.0.0
-#    volumes:
-#      - .:/app
-#    ports:
-#      - "8008:8000"
-#    depends_on:
-#      - db
-#    environment:
-#      DATABASE_URL: postgresql://myuser:mypassword@db/mydatabase
+  web:
+    build: .
+    command: uvicorn main:app --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - "8008:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://myuser:mypassword@db/mydatabase
 
   db:
     image: postgres:15
